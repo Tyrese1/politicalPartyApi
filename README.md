@@ -1,3 +1,2 @@
 # Political Party Crud App Demo
-CRUD operations for political parties, candidates and offices.
-This is a simple Node/Express API backend for political parties, their  candidates and the offices they are contesting for.
+This is a simple Node/Express API backend for political parties, their  candidates and the offices they are contesting for, this demo app has the ability to perform CRUD operations.

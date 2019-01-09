@@ -2,11 +2,11 @@ import express from 'express';
 import dotenv from 'dotenv';
 import 'babel-polyfill';
 
-import politicalPartyApiJSObject from './src/apiJsObject/controller/politicalParty';
+
 import politicalPartyApiDatabase from './src/apiJsonDb/controller/politicalParty';
 
 dotenv.config();
-const  politicalParty = process.env.TYPE === 'db' ?  politicalPartyApiDatabase :  politicalPartyApiJSObject;
+
 
 const app = express()
 
