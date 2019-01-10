@@ -4,12 +4,13 @@ import db from '../db';
 
 const politicalParty  = {
   /**
-   * Create A politicalParty 
+   * Create politicalParty 
    * @param {object} req 
    * @param {object} res
    * @returns {object} politicalParty object 
    */
   async create(req, res) {
+    //SQL Queries to insert values into database
     const createQuery = `INSERT INTO
       politicalPartys(id, politicalParty, candidateName, offices, created_date, modified_date)
       VALUES($1, $2, $3, $4, $5, $6) returning *`;
@@ -40,6 +41,8 @@ const politicalParty  = {
    * @returns {object} politicalPartys array
    */
   async getAll(req, res) {
+    
+    //SQL Queriy to get all values from database
     const findAllQuery = 'SELECT * FROM politicalPartys';
     try {
       const { rows, rowCount } = await db.query(findAllQuery);
@@ -55,6 +58,8 @@ const politicalParty  = {
    * @returns {object} politicalParty object
    */
   async getOne(req, res) {
+    
+    //SQL Query to get single value from database
     const text = 'SELECT * FROM politicalPartys WHERE id = $1';
     try {
       const { rows } = await db.query(text, [req.params.id]);
@@ -73,6 +78,8 @@ const politicalParty  = {
    * @returns {object} updated politicalParty 
    */
   async update(req, res) {
+    
+    //SQL Query to update database record
     const findOneQuery = 'SELECT * FROM politicalPartys WHERE id=$1';
     const updateOneQuery =`UPDATE politicalPartys
       SET politicalParty=$1, candidateName=$2, offices=$3,modified_date=$4
@@ -101,7 +108,8 @@ const politicalParty  = {
    * @param {object} res 
    * @returns {void} return statuc code 204 
    */
-  async delete(req, res) {
+  async delete(req, res) {    
+    //SQL Query to delete a single record from database
     const deleteQuery = 'DELETE FROM politicalPartys WHERE id=$1 returning *';
     try {
       const { rows } = await db.query(deleteQuery, [req.params.id]);
