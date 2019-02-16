@@ -6,15 +6,19 @@ import 'babel-polyfill';
 import politicalPartyApiDatabase from './src/apiJsonDb/controller/politicalParty';
 
 dotenv.config();
-
-
 const app = express()
 
+var http = require('http');  
 app.use(express.json())
 
 app.get('/', (req, res) => {
   return res.status(200).send({'message': 'Server is live and running!'});
+  
 })
+
+
+
+
 
 //API endpoints
 app.post('/api/v1/politicalPartys', politicalPartyApiDatabase.create);
