@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel server.js --out-dir build",
-    "dev-start": "babel-watch server.js"
+    "dev-start": "babel-watch server.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,11 @@
   "bugs": {
     "url": "https://github.com/Tarhe1/politicalPartyApi/issues"
   },
+
+  "engines": {
+    "node": "10.15.1",
+    "npm": "6.4.1"
+},
   "homepage": "https://github.com/Tarhe1/politicalPartyApi#readme",
   "dependencies": {
     "dotenv": "^6.2.0",
