@@ -1,3 +1,6 @@
+// const express = require("express");
+// const dotenv = require("dotenv");
+// require("babel-polyfill");
 import express from 'express';
 import dotenv from 'dotenv';
 import 'babel-polyfill';
@@ -6,6 +9,7 @@ import 'babel-polyfill';
 import politicalPartyApiDatabase from './src/apiJsonDb/controller/politicalParty';
 
 dotenv.config();
+
 const app = express()
 
 var http = require('http');  

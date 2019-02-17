@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Tarhe1/politicalPartyApi#readme",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "moment": "^2.23.0",
@@ -26,6 +27,7 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
+    "@babel/polyfill": "^7.2.5",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-watch": "^2.0.8"
