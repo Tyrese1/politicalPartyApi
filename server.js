@@ -11,12 +11,16 @@ const app = express()
 var http = require('http');  
 app.use(express.json())
 
-app.get('/', (req, res) => {
-  return res.status(200).send({'message': 'Server is live and running!'});
+// app.get('/', (req, res) => {
+//   return res.status(200).send({'message': 'Server is live and running!'});
   
-})
+// })
 
+const path = require('path');
 
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 
 
