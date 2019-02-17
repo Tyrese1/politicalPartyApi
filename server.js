@@ -1,6 +1,3 @@
-// const express = require("express");
-// const dotenv = require("dotenv");
-// require("babel-polyfill");
 import express from 'express';
 import dotenv from 'dotenv';
 import 'babel-polyfill';
