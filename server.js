@@ -35,7 +35,12 @@ app.delete('/api/v1/politicalPartys/:id', politicalPartyApiDatabase.delete);
 
 // app.listen(3000)
 // console.log('app running on port: ', 3000);
+const port = process.env.PORT || 8000;
 
-app.listen(process.env.PORT || 80, function(){
-  console.log('app running on port: ', 80);
+app.listen(port, () => {
+  console.log("App is running on port " + port);
 });
+
+// app.listen(process.env.PORT || 80, function(){
+//   console.log('app running on port: ', 80);
+// });
