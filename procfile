@@ -1,1 +1,1 @@
-web: node babel-watch server.js
+web: npm dev-start
