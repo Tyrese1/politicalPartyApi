@@ -12,9 +12,6 @@ const app = express()
 const http = require('http');  
 app.use(express.json())
 
-require('child_process').spawn('cmd', ['/s', '/c', '"C:\\util\\mycmd.bat"'], { 
-  windowsVerbatimArguments: true
-});
 
 // app.get('/', (req, res) => {
 //   return res.status(200).send({'message': 'Server is live and running!'});
