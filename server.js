@@ -11,20 +11,20 @@ const app = express()
 
 const http = require('http');  
 app.use(express.json())
-
-
-// app.get('/', (req, res) => {
-//   return res.status(200).send({'message': 'Server is live and running!'});
-  
-// })
-
 const path = require('path');
 
+//Enable cross-origin resource sharing (CORS) 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers",'GET,HEAD,PUT,PATCH,POST,DELETE',);
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+//Load html page
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
-
-
 
 //API endpoints
 app.post('/api/v1/politicalPartys', politicalPartyApiDatabase.create);
@@ -33,16 +33,9 @@ app.get('/api/v1/politicalPartys/:id', politicalPartyApiDatabase.getOne);
 app.put('/api/v1/politicalPartys/:id', politicalPartyApiDatabase.update);
 app.delete('/api/v1/politicalPartys/:id', politicalPartyApiDatabase.delete);
 
-
-
-// app.listen(3000)
-// console.log('app running on port: ', 3000);
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
   console.log("App is running on port " + port);
 });
 
-// app.listen(process.env.PORT || 80, function(){
-//   console.log('app running on port: ', 80);
-// });
